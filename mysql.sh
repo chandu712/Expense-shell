@@ -53,7 +53,7 @@ VALIDATE $? "Starting mysql server"
 
 
 
-mysql -h db.chandudevops.online -uroot -p${mysql_root_password}  -e 'SHOW DATABASES;" &>>$LOGFILE
+mysql -h db.chandudevops.online -uroot -p${mysql_root_password}  -e 'SHOW DATABASES;' &>>$LOGFILE
 
 if [ $? -ne 0 ]
 then 
