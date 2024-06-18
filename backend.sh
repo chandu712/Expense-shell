@@ -58,3 +58,23 @@ fi
 
 # if app directory is not created it will create one. This command is idempotenet
 mkdir -p /app
+VALIDATE $? "Creating app directory"
+
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+VALIDATE $? "Downloading the backend code"
+
+cd /app
+unzip /tmp/backend.zip
+VALIDATE $? "Extracted backend code"
+
+npm install
+VALIDATE $? "Installing NodeJS dependencies"
+
+# Humans can use vim editor, shell script doesn't understand vim
+#vim os for visual.
+# Create a backend.service file in the same Expense project folder, copy the source file(give absolute path) to 
+# destination folder(/etc/systemd/service)
+# Absolute path of backend.service is /home/ec2-user/Expense-shell/backend.service
+
+
+
