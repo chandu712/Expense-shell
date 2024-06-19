@@ -53,7 +53,7 @@ then
     VALIDATE $? "Creating expense user to run application" 
 else
     echo -e "Expense user is already created ....$Y SKIPPING $N"
-    exit 1
+    # exit 1 # if we add exit 1, it means rest of the code wll not exceute
 fi
 
 # if app directory is not created it will create one. This command is idempotenet
