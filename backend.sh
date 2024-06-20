@@ -91,6 +91,7 @@ VALIDATE $? "Enabling backend"
 dnf install mysql -y &>>LOGFILE
 VALIDATE $? "Installing MySQL client"
 
+# Schema loading commands are idempotenet, if tables doesn't exists it ill create, otherwise it won't
 mysql -h db.chandudevops.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>LOGFILE
 VALIDATE $? "Schema Loading"
 
